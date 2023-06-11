@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../helpers/app_theme_colors.dart';
+
 class ListViewPage extends StatelessWidget {
   const ListViewPage({super.key});
 
@@ -15,9 +17,12 @@ class ListViewPage extends StatelessWidget {
     ];
     return Scaffold(
       appBar: AppBar(
-        title: Text('Widgets Gallary'),
+        title: Text(
+          'Example of ListView',
+          style: TextStyle(color: AppThemeColors.AppTextColor1),
+        ),
         centerTitle: true,
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: AppThemeColors.AppBarColor1,
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 5, vertical: 15),
@@ -34,9 +39,10 @@ class ListViewPage extends StatelessWidget {
                   margin: EdgeInsets.only(left: 5, right: 5),
                   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                   decoration: BoxDecoration(
-                      color: Colors.blue[200],
+                      color: AppThemeColors.AppBgColor1,
                       borderRadius: BorderRadius.circular(15)),
-                  child: Text(item),
+                  child: Text(item,
+                      style: TextStyle(color: AppThemeColors.AppTextColor2)),
                 ),
               );
             },
