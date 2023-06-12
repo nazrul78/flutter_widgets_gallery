@@ -6,7 +6,7 @@ class ConfigController extends GetxController {
   void onReady() async {
     // TODO: implement onReady
     super.onReady();
-    await 1.delay();
-    Get.offAll(HomePage());
+    await 3.delay();
+    Get.offAll(() => HomePage());
   }
 }
