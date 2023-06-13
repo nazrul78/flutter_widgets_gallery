@@ -3,9 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flutter_widget_gallery/src/helpers/app_theme_colors.dart';
-import 'package:flutter_widget_gallery/src/pages/abc.dart';
 import 'package:flutter_widget_gallery/src/pages/abc2.dart';
-import 'package:flutter_widget_gallery/src/pages/list_view_page.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
