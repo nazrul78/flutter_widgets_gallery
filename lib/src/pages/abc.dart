@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
@@ -136,6 +138,9 @@ class _MyHomePageState extends State<MyHomePage>
         width: Get.width,
         child: _show
             ? BottomNavigationBar(
+                onTap: (value) {
+                  log('$value >>>>>>>>>>>>>>>>>>>');
+                },
                 currentIndex: 0, // this will be set when a new tab is tapped
                 items: [
                   BottomNavigationBarItem(

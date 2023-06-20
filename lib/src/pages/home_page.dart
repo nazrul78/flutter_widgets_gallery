@@ -18,6 +18,8 @@ class _HomePageState extends State<HomePage> {
   ScrollController _scrollController = ScrollController();
   bool isScrollingDown = false;
   bool isAppBarShow = true;
+  double bottomBarHeight = 60;
+  int currentIndex = 0;
   final countries = [
     'LATEST',
     'TOP RANKING',
@@ -70,6 +72,106 @@ class _HomePageState extends State<HomePage> {
       //         backgroundColor: AppThemeColors.AppBarColor1,
       //       )
       //     : null,
+
+      // bottomNavigationBar: AnimatedContainer(
+      //   height: isAppBarShow ? bottomBarHeight : 0.0,
+      //   duration: Duration(milliseconds: 200),
+      //   //  height: bottomBarHeight,
+      //   width: Get.width,
+      //   child: isAppBarShow
+      //       ? BottomNavigationBar(
+      //           onTap: (value) {
+      //             setState(() {
+      //               currentIndex = value;
+      //             });
+      //           },
+      //           currentIndex:
+      //               currentIndex, // this will be set when a new tab is tapped
+      //           items: [
+      //             BottomNavigationBarItem(
+      //               label: 'Home',
+      //               tooltip: 'Profile',
+      //               icon: Icon(Icons.home),
+      //               activeIcon: Icon(
+      //                 Icons.home,
+      //                 size: 30,
+      //                 // color: Colors.redAccent,
+      //               ),
+      //             ),
+      //             BottomNavigationBarItem(
+      //               label: 'Home',
+      //               tooltip: 'Profile',
+      //               icon: Icon(Icons.person),
+      //               activeIcon: Icon(
+      //                 Icons.person,
+      //                 size: 30,
+      //                 // color: Colors.redAccent,
+      //               ),
+      //             ),
+      //             BottomNavigationBarItem(
+      //               label: 'Search',
+      //               icon: Icon(Icons.search),
+      //               activeIcon: Icon(
+      //                 Icons.search,
+      //                 size: 30,
+      //                 // color: Colors.redAccent,
+      //               ),
+      //             )
+      //           ],
+      //         )
+      //       : Container(
+      //           color: Colors.white,
+      //           width: Get.width,
+      //         ),
+      // ),
+
+      bottomNavigationBar: isAppBarShow
+          ? Container(
+              height: bottomBarHeight,
+              width: Get.width,
+              child: BottomNavigationBar(
+                onTap: (value) {
+                  setState(() {
+                    currentIndex = value;
+                  });
+                },
+                currentIndex:
+                    currentIndex, // this will be set when a new tab is tapped
+                items: [
+                  BottomNavigationBarItem(
+                    label: 'Home',
+                    tooltip: 'Profile',
+                    icon: Icon(Icons.home),
+                    activeIcon: Icon(
+                      Icons.home,
+                      size: 30,
+                      // color: Colors.redAccent,
+                    ),
+                  ),
+                  BottomNavigationBarItem(
+                    label: 'Home',
+                    tooltip: 'Profile',
+                    icon: Icon(Icons.person),
+                    activeIcon: Icon(
+                      Icons.person,
+                      size: 30,
+                      // color: Colors.redAccent,
+                    ),
+                  ),
+                  BottomNavigationBarItem(
+                    label: 'Search',
+                    icon: Icon(Icons.search),
+                    activeIcon: Icon(
+                      Icons.search,
+                      size: 30,
+                      // color: Colors.redAccent,
+                    ),
+                  )
+                ],
+              ),
+            )
+          : null,
+
       body: SafeArea(
         child: Column(
           children: <Widget>[
@@ -191,6 +293,52 @@ class _HomePageState extends State<HomePage> {
                 // ),
               ),
             ),
+            // AnimatedContainer(
+            //   height: isAppBarShow ? bottomBarHeight : 0.0,
+            //   duration: Duration(milliseconds: 200),
+            //   //  height: bottomBarHeight,
+            //   width: Get.width,
+            //   child: BottomNavigationBar(
+            //     onTap: (value) {
+            //       setState(() {
+            //         currentIndex = value;
+            //       });
+            //     },
+            //     currentIndex:
+            //         currentIndex, // this will be set when a new tab is tapped
+            //     items: [
+            //       BottomNavigationBarItem(
+            //         label: 'Home',
+            //         tooltip: 'Profile',
+            //         icon: Icon(Icons.home),
+            //         activeIcon: Icon(
+            //           Icons.home,
+            //           size: 30,
+            //           // color: Colors.redAccent,
+            //         ),
+            //       ),
+            //       BottomNavigationBarItem(
+            //         label: 'Home',
+            //         tooltip: 'Profile',
+            //         icon: Icon(Icons.person),
+            //         activeIcon: Icon(
+            //           Icons.person,
+            //           size: 30,
+            //           // color: Colors.redAccent,
+            //         ),
+            //       ),
+            //       BottomNavigationBarItem(
+            //         label: 'Search',
+            //         icon: Icon(Icons.search),
+            //         activeIcon: Icon(
+            //           Icons.search,
+            //           size: 30,
+            //           // color: Colors.redAccent,
+            //         ),
+            //       )
+            //     ],
+            //   ),
+            // ),
           ],
         ),
       ),
