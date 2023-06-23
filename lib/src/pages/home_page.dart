@@ -125,69 +125,162 @@ class _HomePageState extends State<HomePage> {
       //         ),
       // ),
 
-      bottomNavigationBar: isAppBarShow
-          ? Container(
-              height: bottomBarHeight,
-              width: Get.width,
-              child: BottomNavigationBar(
-                onTap: (value) {
-                  setState(() {
-                    currentIndex = value;
-                  });
-                },
-                currentIndex:
-                    currentIndex, // this will be set when a new tab is tapped
-                items: [
-                  BottomNavigationBarItem(
-                    label: 'Home',
-                    tooltip: 'Profile',
-                    icon: Icon(Icons.home),
-                    activeIcon: Icon(
-                      Icons.home,
-                      size: 30,
-                      // color: Colors.redAccent,
-                    ),
-                  ),
-                  BottomNavigationBarItem(
-                    label: 'Home',
-                    tooltip: 'Profile',
-                    icon: Icon(Icons.person),
-                    activeIcon: Icon(
-                      Icons.person,
-                      size: 30,
-                      // color: Colors.redAccent,
-                    ),
-                  ),
-                  BottomNavigationBarItem(
-                    label: 'Search',
-                    icon: Icon(Icons.search),
-                    activeIcon: Icon(
-                      Icons.search,
-                      size: 30,
-                      // color: Colors.redAccent,
-                    ),
-                  )
-                ],
-              ),
-            )
-          : null,
+      bottomNavigationBar: AnimatedContainer(
+        color: AppThemeColors.AppBgColor2,
+        height: isAppBarShow ? 80.0 : 0.0,
+        width: Get.width,
+        duration: Duration(milliseconds: 200),
+        child:
+
+            // BottomNavigationBar(
+            //   onTap: (value) {
+            //     setState(() {
+            //       currentIndex = value;
+            //     });
+            //   },
+            //   currentIndex:
+            //       currentIndex, // this will be set when a new tab is tapped
+            //   items: [
+            //     BottomNavigationBarItem(
+            //       label: 'Home',
+            //       tooltip: 'Profile',
+            //       icon: Icon(Icons.home),
+            //       activeIcon: Icon(
+            //         Icons.home,
+            //         size: 30,
+            //         // color: Colors.redAccent,
+            //       ),
+            //     ),
+            //     BottomNavigationBarItem(
+            //       label: 'Home',
+            //       tooltip: 'Profile',
+            //       icon: Icon(Icons.person),
+            //       activeIcon: Icon(
+            //         Icons.person,
+            //         size: 30,
+            //         // color: Colors.redAccent,
+            //       ),
+            //     ),
+            //     BottomNavigationBarItem(
+            //       label: 'Search',
+            //       icon: Icon(Icons.search),
+            //       activeIcon: Icon(
+            //         Icons.search,
+            //         size: 30,
+            //         // color: Colors.redAccent,
+            //       ),
+            //     )
+            //   ],
+            // )
+
+            Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Icon(
+              Icons.home,
+              size: 50,
+            ),
+            Icon(
+              Icons.home,
+              size: 50,
+            ),
+            Icon(
+              Icons.home,
+              size: 50,
+            ),
+            Icon(
+              Icons.home,
+              size: 50,
+            ),
+          ],
+        ),
+
+        // AppBar(
+        //   backgroundColor: AppThemeColors.AppBarColor1,
+        //   centerTitle: true,
+        //   title: Text(
+        //     'Widgets Gallery',
+        //     style: TextStyle(
+        //         fontSize: 40, color: AppThemeColors.AppTextColor1),
+        //   ),
+        // ),
+      ),
+
+      // bottomNavigationBar: isAppBarShow
+      //     ? Container(
+      //         height: bottomBarHeight,
+      //         width: Get.width,
+      //         child: BottomNavigationBar(
+      //           onTap: (value) {
+      //             setState(() {
+      //               currentIndex = value;
+      //             });
+      //           },
+      //           currentIndex:
+      //               currentIndex, // this will be set when a new tab is tapped
+      //           items: [
+      //             BottomNavigationBarItem(
+      //               label: 'Home',
+      //               tooltip: 'Profile',
+      //               icon: Icon(Icons.home),
+      //               activeIcon: Icon(
+      //                 Icons.home,
+      //                 size: 30,
+      //                 // color: Colors.redAccent,
+      //               ),
+      //             ),
+      //             BottomNavigationBarItem(
+      //               label: 'Home',
+      //               tooltip: 'Profile',
+      //               icon: Icon(Icons.person),
+      //               activeIcon: Icon(
+      //                 Icons.person,
+      //                 size: 30,
+      //                 // color: Colors.redAccent,
+      //               ),
+      //             ),
+      //             BottomNavigationBarItem(
+      //               label: 'Search',
+      //               icon: Icon(Icons.search),
+      //               activeIcon: Icon(
+      //                 Icons.search,
+      //                 size: 30,
+      //                 // color: Colors.redAccent,
+      //               ),
+      //             )
+      //           ],
+      //         ),
+      //       )
+      //     : null,
 
       body: SafeArea(
         child: Column(
           children: <Widget>[
             AnimatedContainer(
-              height: isAppBarShow ? 100.0 : 0.0,
-              duration: Duration(milliseconds: 200),
-              child: AppBar(
-                backgroundColor: AppThemeColors.AppBarColor1,
-                centerTitle: true,
-                title: Text(
-                  'Hello World',
-                  style: TextStyle(
-                      fontSize: 50, color: AppThemeColors.AppTextColor1),
+                color: AppThemeColors.AppBarColor1,
+                height: isAppBarShow ? 80.0 : 0.0,
+                duration: Duration(milliseconds: 200),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Widgets Gallery',
+                      style: TextStyle(
+                          fontSize: 40, color: AppThemeColors.AppTextColor1),
+                    ),
+                  ],
+                )
+
+                // AppBar(
+                //   backgroundColor: AppThemeColors.AppBarColor1,
+                //   centerTitle: true,
+                //   title: Text(
+                //     'Widgets Gallery',
+                //     style: TextStyle(
+                //         fontSize: 40, color: AppThemeColors.AppTextColor1),
+                //   ),
+                // ),
                 ),
-              ),
-            ),
             Container(
               height: 50,
               padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
@@ -251,7 +344,7 @@ class _HomePageState extends State<HomePage> {
                                           color: AppThemeColors.AppTextColor1)),
                                   child: Center(
                                     child: Text(
-                                      'Widgets Gallary',
+                                      'Widgets Gallery',
                                       style: TextStyle(
                                           color: AppThemeColors.AppTextColor1),
                                     ),

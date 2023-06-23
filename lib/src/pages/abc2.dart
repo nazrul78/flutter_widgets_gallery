@@ -50,13 +50,10 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: <Widget>[
             AnimatedContainer(
-              height: _showAppbar ? 256.0 : 0.0,
-              duration: Duration(milliseconds: 500),
+              height: _showAppbar ? 50.0 : 0.0,
+              duration: Duration(milliseconds: 200),
               child: AppBar(
                 title: Text('Scroll Demo'),
-                actions: <Widget>[
-                  //add buttons here
-                ],
               ),
             ),
             Expanded(
@@ -64,6 +61,36 @@ class _HomeScreenState extends State<HomeScreen> {
                 controller: _scrollViewController,
                 child: Column(
                   children: <Widget>[
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
+                    containterContent(),
                     containterContent(),
                     containterContent(),
                     containterContent(),
